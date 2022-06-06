@@ -10,7 +10,7 @@
     "url": "https://dongyeop.com"
   },
   "bin": {
-    "tc": "cli.js"
+    "tcc": "cli.js"
   },
   "engines": {
     "node": ">=7.8.0"
