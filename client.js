@@ -37,7 +37,7 @@ const replaceEmotes = (words, emotes) => {
 
 const getStyledMessage = (message, emotes) => {
   let words = message.split(/\s+/)
-  const pipeline = [boldMentions]
+  const pipeline = [boldMentions, replaceEmotes]
   pipeline.forEach(pipe => {
     words = pipe(
       words,
@@ -48,9 +48,9 @@ const getStyledMessage = (message, emotes) => {
 }
 
 const getBadge = user => {
-  const modBadge = user.mod ? 'MOD ' : ''
-  const subBadge = user.subscriber ? 'SUB' : ''
-  const turboBadge = user.turbo ? 'TURBO' : ''
+  const modBadge = user.mod ? '⚔️' : ''
+  const subBadge = user.subscriber ? '🌟' : ''
+  const turboBadge = user.turbo ? '🔋' : ''
 
   return `${modBadge}${subBadge}${turboBadge}`
 }
